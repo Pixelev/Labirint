@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Player.h"
+#include "Money.h"
 
 using namespace sf;
 
@@ -21,6 +22,7 @@ private:
 	Sprite mapSprite;
 	void init();
 	Player* player;
+	Money* coin;
 
 	sf::String TileMap[HEIGHT_MAP] = {
 
