@@ -6,7 +6,7 @@ void Map::init()
 	mapTexture.loadFromImage(mapImage);
 	mapSprite.setTexture(mapTexture);
 	player = new Player();
-	coin = new Money(Vector2f(100, 100));
+	coin = new Money(Vector2f(100, 100), "Images/coin.png");
 }
 Map::Map()
 {
