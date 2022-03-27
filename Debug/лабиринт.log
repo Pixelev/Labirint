@@ -1,0 +1,40 @@
+﻿  Camera.cpp
+  Engine.cpp
+  keyPressedAction.cpp
+c:\users\levya\source\repos\лабиринт\лабиринт\keypressedaction.cpp(17): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\levya\source\repos\лабиринт\лабиринт\keypressedaction.cpp(22): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\levya\source\repos\лабиринт\лабиринт\keypressedaction.cpp(27): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\levya\source\repos\лабиринт\лабиринт\keypressedaction.cpp(32): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+c:\users\levya\source\repos\лабиринт\лабиринт\keypressedaction.cpp(39): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  map.cpp
+c:\users\levya\source\repos\лабиринт\лабиринт\map.cpp(43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Player.cpp
+c:\users\levya\source\repos\лабиринт\лабиринт\player.cpp(8): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\levya\source\repos\лабиринт\лабиринт\player.cpp(13): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  лабиринт.cpp
+  Generating Code...
+  лабиринт.vcxproj -> C:\Users\levya\source\repos\лабиринт\Debug\лабиринт.exe

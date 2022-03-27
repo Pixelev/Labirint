@@ -1,26 +1,6 @@
 #include "Player.h"
 #include "map.h"
 
-void Player::setWidth(int width)
-{
-	this->width = width;
-}
-
-void Player::setHeight(int height)
-{
-	this->height = height;
-}
-
-int Player::getWidth()
-{
-	return width;
-}
-
-int Player::getHeight()
-{
-	return height;
-}
-
 void Player::dontMoveBehindMap()
 {
 	if (position.x > WINDOW_WIDTH - width)
@@ -45,41 +25,16 @@ void Player::dontMoveBehindMap()
 	}
 }
 
-Player::Player() {
+Player::Player(Vector2f position, String imagePath) : MoveEntity(position, imagePath) {
 	init();
+	setPosition(position);
 }
+
 void Player::init() {
-	sf::Image image;
-	image.loadFromFile("images/player1.png");
-	texture.loadFromImage(image); // install texture 
-	sprite.setTexture(texture); // creates sprite texture
-	setTextureRect(IntRect(0, 0, 80, 120));
-	setPosition(Vector2f(0, 0));
-	sprite.setColor(Color(255, 255, 255, 255));
-}
-
-Vector2f Player::getPosition() {
-	return sprite.getPosition();
-}
-void Player::setPosition(Vector2f pos) {
-	position = pos;
-	sprite.setPosition(position.x, position.y);
-}
-void Player::setTextureRect(IntRect rect) {
-	sprite.setTextureRect(rect);
-}
-Sprite Player::getSprite() {
-	return sprite;
-}
-
-void Player::setSpeed(Vector2f speed)
-{
-	this->speed = speed;
-}
-
-Vector2f Player::getSpeed()
-{
-	return speed;
+	width = 80;
+	height = 120;
+	setSpeed(Vector2f(0, 0));
+	setTextureRect(IntRect(0, 0, width, height));
 }
 
 void Player::update()

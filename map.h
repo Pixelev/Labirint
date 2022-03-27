@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 #include "Money.h"
+#include "Health.h"
 
 using namespace sf;
 
@@ -23,6 +24,7 @@ private:
 	void init();
 	Player* player;
 	Money* coin;
+	Health* hp;
 
 	sf::String TileMap[HEIGHT_MAP] = {
 
