@@ -2,12 +2,35 @@
 
 void Map::init()
 {
-	mapImage.loadFromFile("Images/textures.jpg");
-	mapTexture.loadFromImage(mapImage);
-	mapSprite.setTexture(mapTexture);
-	player = new Player(Vector2f(100, 100), "Images/player1.png");
-	coin = new Money(Vector2f(100, 100), "Images/coin.png");
-	hp = new Health(Vector2f(150, 100), "Images/hp.png");
+	player = new Player(Vector2f(100, 100), "Images/player1.png"); 
+	for (int i = 0; i < HEIGHT_MAP; i++)
+	{
+		for (int j = 0; j < WIDTH_MAP; j++)
+		{
+			if (TileMap[i][j] == 'm')
+			{
+				Floor* floor = new Floor(Vector2f(j * 60, i * 60), "Images/floor.png");
+				entities.push_back(floor);
+				Money* money = new Money(Vector2f(j * 60 + 15, i * 60 + 15), "images/coin.png");
+				entities.push_back(money);
+			}
+
+			if (TileMap[i][j] == 'k')
+			{
+				Wall* wall = new Wall(Vector2f(j * 60, i * 60), "Images/brick.png");
+				entities.push_back(wall);
+				
+			}
+
+			if (TileMap[i][j] == 'g')
+			{
+				Floor* floor = new Floor(Vector2f(j * 60, i * 60), "Images/floor.png");
+				entities.push_back(floor);
+
+			}
+
+		} //k - это стена, буква g - пол, а m - монетка
+	}
 }
 Map::Map()
 {
@@ -15,38 +38,13 @@ Map::Map()
 }
 
 void Map::draw(RenderWindow& window)
-{
-	for (int i = 0; i < HEIGHT_MAP; i++)
+{	
+	for (auto it = entities.begin(); it != entities.end(); it++)
 	{
-		for (int j = 0; j < WIDTH_MAP; j++)
-		{
-			if (TileMap[i][j] == 's')
-			{
-				mapSprite.setTextureRect(IntRect(0, 0, 60, 60));
-			}
-			if (TileMap[i][j] == 'g')
-			{
-				mapSprite.setTextureRect(IntRect(0, 60, 60, 60));
-			}
-			if (TileMap[i][j] == 'l')
-			{
-				mapSprite.setTextureRect(IntRect(180, 60, 60, 60));
-			}
-			if (TileMap[i][j] == 'c')
-			{
-				mapSprite.setTextureRect(IntRect(120, 0, 60, 60));
-			}
-			if (TileMap[i][j] == 'a')
-			{
-				mapSprite.setTextureRect(IntRect(60, 60, 60, 60));
-			}
-			mapSprite.setPosition(j * 60, i * 60);
-			window.draw(mapSprite);
-		}
+		window.draw((*it)->getSprite());
 	}
 	window.draw(player->getSprite());
-	window.draw(coin->getSprite());
-	window.draw(hp->getSprite());
+	
 }
 
 Player* Map::getPlayer()
@@ -57,4 +55,21 @@ Player* Map::getPlayer()
 void Map::update()
 {
 	player->update();
+	for (auto it = entities.begin(); it != entities.end(); it++)
+	{
+		FloatRect playerCollider = player->getSprite().getGlobalBounds();
+		FloatRect otherCollider = (*it)->getSprite().getGlobalBounds();
+		if (playerCollider.intersects(otherCollider) && (*it)->getName() == "Money")
+		{
+			entities.erase(it++); // deletes coin
+		}
+
+		else if (playerCollider.intersects(otherCollider) && (*it)->getName() == "Wall")
+		{
+			player->setSpeed(Vector2f(-player->getSpeed().x, -player->getSpeed().y));
+			player->update();
+			it++;
+		}
+
+	}
 }

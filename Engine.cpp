@@ -9,6 +9,7 @@ void Engine::init() { // функция загрузки компонентов игры
 	window.create(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Game");
 	pressedAction.setPlayer(map.getPlayer());
 	camera = new Camera(map.getPlayer());
+	window.setFramerateLimit(60);
 }
 void Engine::loop() {// функция игрового цикла
 	while (window.isOpen())// игровой цикл

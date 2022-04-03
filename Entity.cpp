@@ -1,5 +1,15 @@
 #include "Entity.h"// подключение заголовочного файла сущности
 
+void Entity::setName(String name)
+{
+	this->name = name;
+}
+
+String Entity::getName()
+{
+	return name;
+}
+
 Entity::Entity(String imagePath) {
 
 	setImagePath(imagePath);

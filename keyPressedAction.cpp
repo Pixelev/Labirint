@@ -14,22 +14,22 @@ void keyPressedAction::action()
 {
 	if (Keyboard::isKeyPressed(Keyboard::Right))
 	{
-		player->setSpeed(Vector2f(0.3, 0));
+		player->setSpeed(Vector2f(2, 0));
 		player->setTextureRect(IntRect(int(player->currentFrame) * player->getWidth(), 3 * player->getHeight(), player->getWidth(), player->getHeight()));
 	}
 	else if (Keyboard::isKeyPressed(Keyboard::Left))
 	{
-		player->setSpeed(Vector2f(-0.3, 0));
+		player->setSpeed(Vector2f(-2, 0));
 		player->setTextureRect(IntRect(int(player->currentFrame) * player->getWidth(), 2 * player->getHeight() , player->getWidth(), player->getHeight()));
 	}
 	else if (Keyboard::isKeyPressed(Keyboard::Up))
 	{
-		player->setSpeed(Vector2f(0, -0.3));
+		player->setSpeed(Vector2f(0, -2));
 		player->setTextureRect(IntRect(int(player->currentFrame) * player->getWidth(), 1 * player->getHeight(), player->getWidth(), player->getHeight()));
 	}
 	else if (Keyboard::isKeyPressed(Keyboard::Down))
 	{
-		player->setSpeed(Vector2f(0, 0.3));
+		player->setSpeed(Vector2f(0, 2));
 		player->setTextureRect(IntRect(int(player->currentFrame) * player->getWidth() , 0 * player->getHeight(), player->getWidth(), player->getHeight()));
 	}
 	else

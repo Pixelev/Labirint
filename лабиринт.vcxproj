@@ -142,12 +142,14 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Floor.cpp" />
     <ClCompile Include="Health.cpp" />
     <ClCompile Include="keyPressedAction.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="Money.cpp" />
     <ClCompile Include="MoveEntity.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Wall.cpp" />
     <ClCompile Include="лабиринт.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -157,12 +159,14 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Floor.h" />
     <ClInclude Include="Health.h" />
     <ClInclude Include="keyPressedAction.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="Money.h" />
     <ClInclude Include="MoveEntity.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

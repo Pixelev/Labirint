@@ -3,7 +3,11 @@
 #include "Player.h"
 #include "Money.h"
 #include "Health.h"
+#include "Wall.h"
+#include "Floor.h"
+#include <list>
 
+using namespace std;
 using namespace sf;
 
 const int WINDOW_WIDTH = 1260;
@@ -18,38 +22,35 @@ public:
 	Player* getPlayer();
 	void update();
 private:
-	Image mapImage;
-	Texture mapTexture;
-	Sprite mapSprite;
 	void init();
+	list <Entity*> entities;
 	Player* player;
-	Money* coin;
-	Health* hp;
 
 	sf::String TileMap[HEIGHT_MAP] = {
 
-"sssssssssssssssssssss",
+	"kkkkkkkkkkkkkkkkkkkkk",
 
-"sggggllgggggggggggggs",
+	"kggggggkgmggggkgmkgmk",
 
-"sgggggggglggggggglggs",
+	"kggggggkggggggkggkggk",
 
-"sgggggglgggggglgggggs",
+	"kggggggkkkkgggkggkggk",
 
-"sgggggggggggggggggggs",
+	"kkkkkgggmgkgggkggkggk",
 
-"sgglggggggggggglggggs",
+	"kgggggggggkgggkggkggk",
 
-"sgggggllggggggcaggggs",
+	"kgggggggggkgggkggkggk",
 
-"sggggggggllgggggggggs",
+	"kggkkkkkkkkgggkggkggk",
 
-"sglggggggggggglgggggs",
+	"kggggggggggggggggkggk",
 
-"sgggglgggggggglgggggs",
+	"kggggggmgggggggmggggk",
 
-"sgggggggggggggggggggs",
+	"kgggggggggggggggggggk",
 
-"sssssssssssssssssssss"
+	"kmgkkkkkkkkkkkkkkkkkk"
+
 	};
-};
+}; //k - это стена, буква g - пол, а m - монетка

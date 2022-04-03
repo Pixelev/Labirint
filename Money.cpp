@@ -10,5 +10,6 @@ Money::Money(Vector2f position, String imagePath) : Entity(imagePath)
 {
 	init();
 	setPosition(position);
+	setName("Money");
 }
 

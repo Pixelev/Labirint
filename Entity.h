@@ -13,7 +13,10 @@ protected:
 	int height;
 	String imagePath;
 	virtual void init();
+	String name;
 public:
+	void setName(String name);
+	String getName();
 	Entity(String imagePath);
 	void setPosition(Vector2f position);
 	void setTextureRect(IntRect rect);
