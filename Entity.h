@@ -28,4 +28,5 @@ public:
 	int getWidth();
 	int getHeight();
 	String getImagePath();
+	virtual void update();
 };

@@ -1,5 +1,6 @@
 #include "map.h"
 
+
 void Map::init()
 {
 	player = new Player(Vector2f(100, 100), "Images/player1.png"); 
@@ -28,6 +29,29 @@ void Map::init()
 				entities.push_back(floor);
 
 			}
+			
+			if (TileMap[i][j] == 'h')
+			{
+				Floor* floor = new Floor(Vector2f(j * 60, i * 60), "Images/floor.png");
+				entities.push_back(floor);
+
+				Health* health = new Health(Vector2f(j * 60 + 15, i * 60 + 15), "Images/hp.png");
+				entities.push_back(health);
+
+			}
+
+			if (TileMap[i][j] == 'a')
+			{
+				Floor* floor = new Floor(Vector2f(j * 60, i * 60), "Images/floor.png");
+				entities.push_back(floor);
+
+				Archer* archer = new Archer(Vector2f(j * 60, i * 60), "images/archer.png");
+				entities.push_back(archer);
+
+				entities.push_back(archer->getArrow());
+
+			}
+
 
 		} //k - это стена, буква g - пол, а m - монетка
 	}
@@ -55,6 +79,15 @@ Player* Map::getPlayer()
 void Map::update()
 {
 	player->update();
+	for (auto it = entities.begin(); it != entities.end(); it++)
+	{
+		if ((*it)->getName() == "archer")
+		{
+			(*it)->update();
+			Archer* archer = (Archer*)(*it);
+			archer->collision(entities);
+		}
+	}
 	for (auto it = entities.begin(); it != entities.end(); it++)
 	{
 		FloatRect playerCollider = player->getSprite().getGlobalBounds();

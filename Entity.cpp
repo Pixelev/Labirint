@@ -85,4 +85,9 @@ String Entity::getImagePath() {// получить путь к картинке
 
 }
 
+void Entity::update()
+{
+
+}
+
 

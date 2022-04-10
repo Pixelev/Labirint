@@ -6,6 +6,7 @@
 #include "Wall.h"
 #include "Floor.h"
 #include <list>
+#include "Archer.h"
 
 using namespace std;
 using namespace sf;
@@ -32,7 +33,7 @@ private:
 
 	"kggggggkgmggggkgmkgmk",
 
-	"kggggggkggggggkggkggk",
+	"kgghgggkggggggkggkggk",
 
 	"kggggggkkkkgggkggkggk",
 
@@ -46,9 +47,9 @@ private:
 
 	"kggggggggggggggggkggk",
 
-	"kggggggmgggggggmggggk",
+	"kggggggmgggggagmggggk",
 
-	"kgggggggggggggggggggk",
+	"kggggggggggggaggggggk",
 
 	"kmgkkkkkkkkkkkkkkkkkk"
 
