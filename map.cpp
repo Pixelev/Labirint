@@ -79,13 +79,26 @@ Player* Map::getPlayer()
 void Map::update()
 {
 	player->update();
+	int moneyCounter = 0;
+	for (auto it = entities.begin(); it != entities.end(); it++) {
+
+		if ((*it)->getName() == "Money") {
+			moneyCounter++;
+		}
+		
+	}
+	if (moneyCounter == 0)
+	{
+		player->setState("win");
+		cout << "You win!";
+	}
+
 	for (auto it = entities.begin(); it != entities.end(); it++)
 	{
-		if ((*it)->getName() == "archer")
+		if ((*it)->getName() == "Archer")
 		{
 			(*it)->update();
-			Archer* archer = (Archer*)(*it);
-			archer->collision(entities);
+			
 		}
 	}
 	for (auto it = entities.begin(); it != entities.end(); it++)
@@ -95,12 +108,27 @@ void Map::update()
 		if (playerCollider.intersects(otherCollider) && (*it)->getName() == "Money")
 		{
 			entities.erase(it++); // deletes coin
+			player->setMoney(player->getMoney() + 1);
+			cout << player->getMoney();
 		}
 
 		else if (playerCollider.intersects(otherCollider) && (*it)->getName() == "Wall")
 		{
 			player->setSpeed(Vector2f(-player->getSpeed().x, -player->getSpeed().y));
 			player->update();
+			it++;
+		}
+		else if ((*it)->getName() == "Archer")
+		{
+			Archer* archer = (Archer*)(*it);
+			archer->collision(entities);
+			Arrow* arrow = archer->getArrow();
+			FloatRect arrowCollider = arrow->getSprite().getGlobalBounds();
+			if (playerCollider.intersects(arrowCollider))
+			{
+				player->setState("lose");
+				cout << "you lose";
+			}
 			it++;
 		}
 

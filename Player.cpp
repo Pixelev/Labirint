@@ -46,6 +46,26 @@ void Player::update()
 	dontMoveBehindMap();
 }
 
+int Player::getMoney()
+{
+	return money;
+}
+
+String Player::getState()
+{
+	return state;
+}
+
+void Player::setMoney(int money)
+{
+	this->money = money;
+}
+
+void Player::setState(String state)
+{
+	this->state = state;
+}
+
  
 
 

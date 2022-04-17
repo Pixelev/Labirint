@@ -1,3 +1,42 @@
-﻿  keyPressedAction.cpp
-c:\users\levya\source\repos\лабиринт\лабиринт\keypressedaction.cpp(39): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+﻿  map.cpp
+c:\users\levya\source\repos\лабиринт\лабиринт\map.cpp(13): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\levya\source\repos\лабиринт\лабиринт\map.cpp(15): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\levya\source\repos\лабиринт\лабиринт\map.cpp(21): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\levya\source\repos\лабиринт\лабиринт\map.cpp(28): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\levya\source\repos\лабиринт\лабиринт\map.cpp(35): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\levya\source\repos\лабиринт\лабиринт\map.cpp(38): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\levya\source\repos\лабиринт\лабиринт\map.cpp(45): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\levya\source\repos\лабиринт\лабиринт\map.cpp(48): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
   лабиринт.vcxproj -> C:\Users\levya\source\repos\лабиринт\Debug\лабиринт.exe

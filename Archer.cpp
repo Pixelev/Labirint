@@ -32,7 +32,7 @@ void Archer::shoot()
 Archer::Archer(Vector2f position, String imagePath) : Entity (imagePath)
 {
 	setPosition(position);
-	setName("archer");
+	setName("Archer");
 	arrow = new Arrow(Vector2f(position.x, position.y + 20), "images/arrow.png");
 	setTextureRect(IntRect(0, 0, width, height));
 	sprite.setScale(-1, 1);
