@@ -13,7 +13,7 @@ class Archer : public Entity
 private:
 	bool isShot = false;
 	Arrow* arrow;
-	float currentFrame = 4;
+	float currentFrame = 0;
 	void animation();
 	void shoot();
 	int width = 60;

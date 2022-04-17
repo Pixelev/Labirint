@@ -44,7 +44,7 @@ void Archer::collision(list<Entity*> entities)
 	for (auto it = entities.begin(); it != entities.end(); it++)
 	{
 		FloatRect otherCollider = (*it)->getSprite().getGlobalBounds();
-		if (arrowCollider.intersects(otherCollider) && (*it)->getName() == "wall")
+		if (arrowCollider.intersects(otherCollider) && (*it)->getName() == "Wall")
 		{
 			isShot = false;
 		}

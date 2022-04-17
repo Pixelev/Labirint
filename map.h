@@ -31,9 +31,9 @@ private:
 
 	"kkkkkkkkkkkkkkkkkkkkk",
 
-	"kggggggkgmggggkgmkgmk",
+	"kgghgggkgmggggkgmkgmk",
 
-	"kgghgggkggggggkggkggk",
+	"kggggggkggggggkggkggk",
 
 	"kggggggkkkkgggkggkggk",
 
@@ -41,15 +41,15 @@ private:
 
 	"kgggggggggkgggkggkggk",
 
-	"kgggggggggkgggkggkggk",
+	"kgggghggggkgggkggkggk",
 
 	"kggkkkkkkkkgggkggkggk",
 
-	"kggggggggggggggggkggk",
+	"kgggggggggggghgggkggk",
 
 	"kggggggmgggggagmggggk",
 
-	"kggggggggggggaggggggk",
+	"kggggghggggggaggggggk",
 
 	"kmgkkkkkkkkkkkkkkkkkk"
 
